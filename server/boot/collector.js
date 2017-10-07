@@ -489,7 +489,8 @@ function getCustomYoutube(contentId, videoId) {
         }
 
         var options = {
-            uri: 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=https://www.youtube.com/watch?v='+videoId,
+            // uri: 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=https://www.youtube.com/watch?v='+videoId,
+            uri: 'http://www.yt-mp3.com/fetch?v='+videoId+'&apikey=1234567',
             method: 'GET',
             timeout: 120000
         }
@@ -521,8 +522,12 @@ function getCustomYoutube(contentId, videoId) {
 
 
 function downloadCustomFile(contentId, videoId, data, dir){
+
+    console.log('downloadCustomFile : ', data)
+
     var stream = request
-        .get(data.link)
+        // .get(data.link)
+        .get(data.url)
         .on('error', function(err) {
             util.logger('error').error("getMp3 ::", JSON.stringify(err, null, 2));
 
