@@ -1,19 +1,18 @@
 {
   "db": {
-    "host": "52.37.169.163",
+    "host": "10.10.1.202",
     "port": 27017,
     "database": "music",
     "username": "indeefun",
     "password": "indeefun",
     "name": "db",
-    "connector": "mongodb",
-    "allowExtendedOperators": true
+    "connector": "mongodb"
   },
   "storage": {
     "name": "storage",
     "connector": "loopback-component-storage",
     "provider": "filesystem",
-    "root": "./server/storage"
+    "root": "./server/storage/music"
   },
   "emailDs": {
     "name": "emailDs",
@@ -35,4 +34,3 @@
     ]
   }
 }
-
