@@ -478,7 +478,7 @@ exports.executeById = function(data){
 
 
 function getCustomYoutube(contentId, videoId) {
-
+    
     return new Promise(function(resolve, reject){
 
         // var dir = path.join(__dirname + '/../storage/custom');
@@ -486,79 +486,82 @@ function getCustomYoutube(contentId, videoId) {
 
         if (!fs.existsSync(dir)){
             fs.mkdirSync(dir);
-        }    
-        
+        }
+
         var options = {
             uri: 'http://www.youtubeinmp3.com/fetch/?format=JSON&video=https://www.youtube.com/watch?v='+videoId,
             method: 'GET',
-            timeout: 120000           
+            timeout: 120000
         }
 
         request(options, function(error, response, body){
-            
+
             // console.log('getYoutubeMp3Script :: ', body);
             util.logger('debug').debug('getYoutubeMp3Script :: ', body);
-            
+
             //if(!error && response.statusCode == 200 && null != body)
             if(null != body)
             {
-                var data = JSON.parse(body);                  
+                var data = JSON.parse(body);
                 downloadCustomFile(contentId, videoId, data, dir);
-                util.logger('debug').debug('body.status', data);                
+                util.logger('debug').debug('body.status', data);
             }
             else
             {
-                util.logger('error').error("getYoutubeMp3Script ::", body); 
+                util.logger('error').error("getYoutubeMp3Script ::", body);
                 return resolve({url:null, timeout:null, body:body});
             }
 
-        });    
+        });
 
     });
 };
+    
+
 
 
 function downloadCustomFile(contentId, videoId, data, dir){
     var stream = request
         .get(data.link)
         .on('error', function(err) {
-            util.logger('error').error("getMp3 ::", JSON.stringify(err, null, 2)); 
+            util.logger('error').error("getMp3 ::", JSON.stringify(err, null, 2));
 
             content.destroyAll({id: videoId},function (err, obj) {
-                
+
                 if (err) {
-                    util.logger('error').error("getMp3.destroyAll :: ", JSON.stringify(err, null, 2)); 
-                }                    
-                
-                return resolve({res:true});                        
+                    util.logger('error').error("getMp3.destroyAll :: ", JSON.stringify(err, null, 2));
+                }
+
+                return resolve({res:true});
             });
         })
         .pipe(fs.createWriteStream((util.Globals.storagePath +'/UCQIP6tGA4AQEIkABgb1Alh1/' + videoId + '.mp3')));
         // .pipe(fs.createWriteStream((__dirname, 'server/storage/' + channelId + '/' + videoId + '.mp3')));
 
-    stream.on('finish', function () {                    
+    stream.on('finish', function () {
         getFilesizeInBytes(dir + "/" + videoId + ".mp3")
-        .then(function(result){                           
+        .then(function(result){
 
-            audio.create({           
-                // channelId: channelId, 
+            audio.create({
+                // channelId: channelId,
                 // videoId: videoId,
-                contenId: contentId, 
+                contenId: contentId,
                 length: data.length,
-                name: data.title, 
+                name: data.title,
                 created: new Date().toJSON(),
-                size: result.size, 
-                alias: data.title,  
-                // url: "/" + channelId + "/" + videoId + ".mp3"            
-                url: "/api/containers/UCQIP6tGA4AQEIkABgb1Alh1/download/" + videoId + ".mp3"            
+                size: result.size,
+                alias: data.title,
+                // url: "/" + channelId + "/" + videoId + ".mp3"
+                url: "/api/containers/UCQIP6tGA4AQEIkABgb1Alh1/download/" + videoId + ".mp3"
             },function (err, obj) {
-                if (err) util.logger('error').error("audio.create :: ", JSON.stringify(err, null, 2));                     
+                if (err) util.logger('error').error("audio.create :: ", JSON.stringify(err, null, 2));
                 console.log('downloadFile : ', obj )
-            });  
+            });
 
         });
-    });     
+    });
 }
+
 
 
 
@@ -569,9 +572,7 @@ exports.executeCustom = function(videoId){
     console.log('data', videoId);
 
     youTube.getById(videoId, function(error, result) {
-        if (error) console.log(error);
-        
-        console.log(JSON.stringify(result, null, 2));
+        if (error) console.log(error);    
 
         content.create({
             type: 'youtube',  
