@@ -1,0 +1,63 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+		<!-- <a ng-click="open()"class="pull-right btn btn-primary btn-outline btn-rounded">ADD CHANNEL</a> -->		
+
+
+	    <div class="jumbotron">
+
+	    	<div auth-sidebar></div>    
+	        
+	        <div class="col-md-10">
+
+	        	<div class="form-group">			    	
+			    	<input type="text" class="form-control" placeholder="검색 ... " 
+			    	 	   ng-enter="search()" ng-model="keyword">
+			  	</div>
+
+	            <table st-table="rowCollection" class="table table-hover">
+	                <thead>
+	                <tr>
+	                	<th></th>
+	                    <th>Name</th>
+	                    <th>Description</th>
+	                    <th>Created</th>	                    
+	                    <th>Delete</th>	                    
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr dir-paginate="content in contents | itemsPerPage: pageSize" total-items="totalCount" 
+	                	current-page="pagination.current">
+	                	<td>{{(totalCount - (pageSize * (pagination.current-1))) - $index}}</td>
+	                    <td>{{content.name}}</td>
+	                    <td>{{content.description}}</td>
+	                    <td>{{content.created | date:'yyyy-MM-dd  mm:ss'}}</td>	                 
+	                    <td>
+	                        <button class="btn btn-danger"                                 
+	                                type="button"
+	                                ng-click="confirmDelete($index, content.id)">
+	                                delete
+	                        </button>
+	                    </td>
+	                </tr>
+	                </tbody>
+	            </table>
+
+	            <div style="text-align:center">
+	                <dir-pagination-controls boundary-links="true" 
+	                                         on-page-change="pageChanged(newPageNumber)" 
+	                                         template-url="components/pagination/dirPagination.tpl.html">                    
+	                </dir-pagination-controls>
+	            </div>          
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

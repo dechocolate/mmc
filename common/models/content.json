@@ -1,0 +1,89 @@
+{
+  "name": "content",
+  "base": "PersistedModel",
+  "indexes": {
+    "title": {
+      "title": -1
+    }
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string",
+      "required": false
+    },
+    "channelId": {
+      "type": "string"
+    },
+    "channelTitle": {
+      "type": "string",
+      "required": false
+    },
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "tags": {
+      "type": "array",
+      "required": false
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "thumbnails": {
+      "type": {},
+      "required": false
+    },
+    "videoId": {
+      "type": "string",
+      "required": false
+    },
+    "publishedAt": {
+      "type": "date",
+      "required": false
+    },
+    "views": {
+      "type": "number",
+      "required": false
+    },
+    "created": {
+      "type": "date",
+      "required": false
+    },
+    "updated": {
+      "type": "date",
+      "required": false
+    },
+    "deleted": {
+      "type": "Boolean",
+      "required": false
+    },
+    "display": {
+      "type": "Boolean",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "collection": {
+      "type": "belongsTo",
+      "model": "collection",
+      "foreignKey": "channelId"
+    },
+    "audios": {
+      "type": "hasOne",
+      "model": "audio",
+      "foreignKey": "contenId"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

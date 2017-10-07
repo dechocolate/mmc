@@ -1,0 +1,84 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+		<!-- <a ng-click="open()"class="pull-right btn btn-primary btn-outline btn-rounded">ADD CHANNEL</a> -->		
+
+
+	    <div class="jumbotron">
+
+	    	<div user-sidebar></div>    
+	        
+	        <div class="col-md-10">
+
+	        	<div class="form-group">			    	
+			    	<input type="text" class="form-control" placeholder="검색 ... " 
+			    	 	   ng-enter="search()" ng-model="keyword">
+			  	</div>
+
+	            <table st-table="rowCollection" class="table table-hover">
+	                <thead>
+	                <tr>
+	                	<th></th>
+	                    <th>Name</th>
+	                    <th>Email</th>
+	                    <th>Auth</th>	                    
+	                    <th>Available</th>
+	                    <th>Delete</th>	                    
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr dir-paginate="content in contents | itemsPerPage: pageSize" total-items="totalCount" current-page="pagination.current">
+	                	<td>{{(totalCount - (pageSize * (pagination.current-1))) - $index}}</td>
+	                    <td>{{content.username}}</td>
+	                    <td>{{content.email}}</td>
+	                    <td>
+	                        <button class="btn btn-info"                                 
+	                                type="button"
+	                                ng-click="viewAuth(content.username, content.id)">
+	                                auth
+	                        </button>
+	                    </td>
+	                    <td>
+	                        <button ng-if="content.available" 
+	                                class="btn btn-warning"                                 
+	                                type="button"
+	                                data-id="{{content.channelId}}" 
+	                                ng-click="CollectById($index, $event)">
+	                                active
+	                        </button>
+	                        <button ng-if="!content.available" 
+	                                class="btn btn-warning"                                 
+	                                ng-click="updateCollection($index, content.id, content.channelId)"
+	                                type="button">
+	                                inactive
+	                        </button>        
+	                    </td>
+	                    <td>
+	                        <button class="btn btn-danger"                                 
+	                                type="button"
+	                                ng-click="confirmDelete($index, content.id)">
+	                                delete
+	                        </button>
+	                    </td>
+	                </tr>
+	                </tbody>
+	            </table>
+
+	            <div style="text-align:center">
+	                <dir-pagination-controls boundary-links="true" 
+	                                         on-page-change="pageChanged(newPageNumber)" 
+	                                         template-url="components/pagination/dirPagination.tpl.html">                    
+	                </dir-pagination-controls>
+	            </div>          
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

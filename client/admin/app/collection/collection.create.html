@@ -1,0 +1,49 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+		<!-- <a ng-click="open()"class="pull-right btn btn-primary btn-outline btn-rounded">ADD CHANNEL</a> -->		
+
+
+	    <div class="jumbotron">
+
+	    	<div collection-sidebar></div>      
+	        
+	        <div class="col-md-10">
+	            
+	        	<form>
+	        						 
+				  	<div class="form-group">
+		                <label for="usr">Channel ID : </label>
+		                <input type="text" class="form-control" id="usr" ng-model="addChannel">
+		            </div>
+
+		            <div class="form-group">
+		            	{{resultText}}
+		                <img ng-src="{{param.thumbnails.high.url}}" width="20%" />
+		                <p>{{param.channelId}}</p>
+		                <p>{{param.channelTitle}}</p>
+		                <p>{{param.description}}</p>        
+		            </div>
+
+				  	  	
+				  	
+				  	<button type="button" class="btn btn-default" 				  			
+				  			ng-click="ok()">Find</button>
+				  	<button type="button" class="btn btn-default" 
+				  			ng-disabled="param.channelId == ''"
+				  			ng-click="create()">Enroll</button>
+				</form>
+
+
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

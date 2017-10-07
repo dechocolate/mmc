@@ -1,0 +1,31 @@
+{
+  "appenders": [
+      {
+          "type": "dateFile",
+          "filename": "log/debug.log",
+          "pattern": "-yyyy-MM-dd",
+          "maxLogSize": 20480,
+          "backups": 10,
+          "alwaysIncludePattern": false,
+          "category": "debug"
+      },
+      {
+          "type": "dateFile",
+          "filename": "log/info.log",
+          "pattern": "-yyyy-MM-dd",
+          "maxLogSize": 20480,
+          "backups": 10,
+          "alwaysIncludePattern": false,
+          "category": "info"
+      },
+      {
+          "type": "dateFile",
+          "filename": "log/error.log",
+          "pattern": "-yyyy-MM-dd",
+          "maxLogSize": 20480,
+          "backups": 10,
+          "alwaysIncludePattern": false,
+          "category": "error"
+      }
+  ]
+}

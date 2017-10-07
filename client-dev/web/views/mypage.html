@@ -1,0 +1,61 @@
+ <!-- Navigation -->
+    <!--  -->
+
+    <!-- Page Content -->    
+    <div class="container">
+
+        <div class="row">
+
+            <div mypage-sidebar></div>
+
+            <div class="col-md-9">
+
+            
+                <div class="row">
+
+                    <div>
+
+                        <div ng-repeat="content in contents">
+
+                            <div class="col-sm-4 col-lg-4 col-md-4" >
+                                <div class="thumbnail">
+                                    <a target="_blank" href="https://www.youtube.com/watch?v={{content.videoId}}">
+                                        <img ng-src="{{content.thumbnails.high.url}}" alt="{{content.description}}">
+                                    </a>
+                                    <div class="caption">
+                                        <h4 class="pull-right">{{content.audios.length | secondsToDateTime | date:'mm:ss'}}</h4>                                        
+                                        <h4><a href="#">{{content.channelTitle}}</a>
+                                        </h4>
+                                        <p>{{content.title}}
+                                            <!-- <a target="_blank" href="https://www.youtube.com/watch?v={{content.videoId}}">
+                                                Bootsnipp - http://bootsnipp.com
+                                            </a>. -->
+                                        </p>
+                                    </div>
+                                    <div class="ratings">
+                                        <p class="pull-right">{{content.views}} reviews</p>
+                                        <p>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                            <span class="glyphicon glyphicon-star"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> <!-- end ng-repeat -->
+
+                    </div> <!-- end infinite-scroll -->  
+
+                    <div ng-show='reddit.busy'>Loading data...</div>   
+
+                </div> 
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->

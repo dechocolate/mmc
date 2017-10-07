@@ -1,0 +1,66 @@
+{
+  "name": "collection",
+  "base": "PersistedModel",
+  "properties": {
+    "userId": {
+      "type": "string",
+      "required": false
+    },
+    "channelId": {
+      "type": "string",
+      "index": true
+    },
+    "channelTitle": {
+      "type": "string",
+      "required": false,
+      "index": true
+    },
+    "publishedAt": {
+      "type": "date",
+      "required": false
+    },
+    "thumbnails": {
+      "type": {},
+      "required": false
+    },
+    "tags": {
+      "type": "array",
+      "required": false
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "state": {
+      "type": "boolean",
+      "required": false
+    },
+    "pageInfo": {
+      "type": {},
+      "required": false
+    },
+    "views": {
+      "type": "number",
+      "required": false
+    },
+    "display": {
+      "type": "Boolean",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    },
+    "contents": {
+      "type": "hasMany",
+      "model": "content",
+      "foreignKey": "channelId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

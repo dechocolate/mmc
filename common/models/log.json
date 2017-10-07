@@ -1,0 +1,35 @@
+{
+  "name": "log",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "deviceType": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "time": {
+      "type": "Date"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

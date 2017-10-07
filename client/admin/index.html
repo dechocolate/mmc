@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<base href="/admin/"></base>
+		
+		<title>MY MUSIC CHANNEL ADMIN</title>
+		
+		<!-- <meta name="description" content="">
+		<meta name="viewport" content="width=device-width"> -->
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<!-- build:css(.) styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:css -->
+		<link rel="stylesheet" href="assets/styles/style.css">
+		<!-- <link rel="stylesheet" href="assets/libs/bootstrap/dist/css/bootstrap.css"> -->		
+		<link rel="stylesheet" href="assets/styles/custom.css">
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" media="all">
+		<!-- endbuild -->
+	</head>
+	<body ng-app="adminApp" style="overflow:auto; padding:0; margin:0;">
+	<!--[if lte IE 8]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+
+	<!-- Add your site or application content here -->
+
+	
+	<div class="container">
+        <ui-view></ui-view>
+    </div>   
+
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	 <!-- <script>
+		 !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+		 (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+		 r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+		 }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		 ga('create', 'UA-XXXXX-X');
+		 ga('send', 'pageview');
+	</script> -->
+
+
+	<!-- build:js(.) app/vendor.js -->
+	<!-- bower:js -->
+	<script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="assets/libs/angular/angular.js"></script>
+	<script src="assets/libs/angular-mocks/angular-mocks.js"></script>
+    <script src="assets/libs/angular-resource/angular-resource.js"></script>
+    <script src="assets/libs/angular-ui-router/release/angular-ui-router.js"></script>    
+    <script src="assets/libs/angular-bootstrap/ui-bootstrap.js"></script>  
+    <script src="assets/libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>   
+    
+    <script src="assets/libs/angular-cookies/angular-cookies.js"></script>
+    <script src="assets/libs/angular-sanitize/angular-sanitize.js"></script>
+
+    <script src="assets/libs/angular-modal-service/dst/angular-modal-service.js"></script>
+	<script src="assets/libs/angularUtils-pagination/dirPagination.js"></script>
+	<script src="assets/libs/angular-local-storage/dist/angular-local-storage.js"></script>	
+
+	<!-- ui-tree -->
+	<link rel="stylesheet" href="assets/libs/angular-ui-tree/dist/angular-ui-tree.min.css">
+	<script src="assets/libs/angular-ui-tree/dist/angular-ui-tree.js"></script>
+
+	<!-- datetimepicker -->
+	<script src="assets/libs/moment/moment.js"></script>
+	<link rel="stylesheet" href="assets/libs/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>		
+	<script src="assets/libs/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
+	<script src="assets/libs/angular-bootstrap-datetimepicker/src/js/datetimepicker.templates.js"></script>	
+
+	<link rel="stylesheet"  href="assets/libs/angular-bootstrap-toggle-switch/style/bootstrap3/angular-toggle-switch-bootstrap-3.css" media="all" >	
+	<script src="assets/libs/angular-bootstrap-toggle-switch/angular-toggle-switch.js"></script>
+
+
+
+
+
+	<!-- endbower -->	
+	<!-- endbuild -->
+
+
+	<!-- build:js -->
+
+	<!-- default app -->
+	<script src="app/app.js"></script>
+	<script src="app/app.config.js"></script>
+	<script src="app/app.interceptors.js"></script>
+	<script src="app/app.directive.js"></script>
+	
+	<!-- modules -->	
+
+	<!-- login -->
+	<script src="app/login/login.route.js"></script>
+	<script src="app/login/login.controller.js"></script>
+	
+	<!-- user -->	
+	<script src="app/user/user.route.js"></script>
+	<script src="app/user/user.sidebar.js"></script>
+	<script src="app/user/user.list.controller.js"></script>
+	<script src="app/user/user.list.auth.modal.js"></script>
+	<script src="app/user/user.create.controller.js"></script>	
+
+	<!-- auth -->	
+	<script src="app/auth/auth.route.js"></script>
+	<script src="app/auth/auth.sidebar.js"></script>
+	<script src="app/auth/auth.list.controller.js"></script>
+	<script src="app/auth/auth.create.controller.js"></script>
+
+	<!-- category -->	
+	<script src="app/category/category.route.js"></script>
+	<script src="app/category/category.sidebar.js"></script>
+	<script src="app/category/category.list.controller.js"></script>
+	<script src="app/category/category.create.controller.js"></script>
+	<script src="app/category/category.view.controller.js"></script>
+	<script src="app/category/category.edit.controller.js"></script>
+
+	<!-- banner -->	
+	<script src="app/banner/banner.route.js"></script>
+	<script src="app/banner/banner.sidebar.js"></script>
+	<script src="app/banner/banner.list.controller.js"></script>
+	<script src="app/banner/banner.create.controller.js"></script>
+	<script src="app/banner/banner.view.controller.js"></script>
+	
+	<!-- collection -->	
+	<script src="app/collection/collection.route.js"></script>
+	<script src="app/collection/collection.sidebar.js"></script>
+	<script src="app/collection/collection.list.controller.js"></script>
+	<script src="app/collection/collection.create.controller.js"></script>
+	<script src="app/collection/collection.view.controller.js"></script>
+	
+
+	
+
+	<!-- components -->
+
+	<!-- common -->
+	<script src="components/common/lb.services.js"></script>
+	<script src="components/common/util.services.js"></script>
+	<script src="components/common/youtube.services.js"></script>
+
+	<!-- autocomplete -->
+	<link rel="stylesheet" href="components/autocomplete/autocomplete.css"/>	
+	<script src="components/autocomplete/autocomplete.js"></script>
+
+	<!-- autocomplete-list -->
+	<link rel="stylesheet" href="components/autocomplete-list/autocomplete-list.css"/>	
+	<script src="components/autocomplete-list/autocomplete-list.js"></script>
+
+	<!-- modal -->
+	<script src="components/modal/confirm.js"></script>
+	<script src="components/modal/category.js"></script>
+
+	<!-- header -->
+	<script src="components/header/header.component.js"></script>
+
+	<!-- footer -->
+	<script src="components/footer/footer.component.js"></script>
+
+	<!-- endbuild -->
+
+</body>
+</html>

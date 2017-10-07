@@ -1,0 +1,32 @@
+{
+  "name": "report",
+  "base": "PersistedModel",
+  "properties": {
+    "type": {
+      "type": "string"
+    },
+    "userId": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "device": {
+      "type": "string"
+    },
+    "deviceType": {
+      "type": "string"
+    },
+    "time": {
+      "type": "Date"
+    },
+    "content": {
+      "type": "String",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

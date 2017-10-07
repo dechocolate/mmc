@@ -1,0 +1,38 @@
+{
+  "name": "file",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "alias": {
+      "type": "string",
+      "required": false
+    },
+    "type": {
+      "type": "string"
+    },
+    "size": {
+      "type": "number",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

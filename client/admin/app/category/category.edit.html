@@ -1,0 +1,60 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+		<!-- <a ng-click="open()"class="pull-right btn btn-primary btn-outline btn-rounded">ADD CHANNEL</a> -->		
+
+
+	    <div class="jumbotron">
+
+	    	<div category-sidebar></div>    
+	        
+	        <div class="col-md-6">
+	            
+	        	<form>
+	        		<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>ID:</label>
+				    	<input type="text" class="form-control" ng-model="model.id" readonly>
+				  	</div>
+	        		<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>Name:</label>
+				    	<input type="text" class="form-control" ng-model="model.name">
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>thumbnails:</label>
+				    	<input type="text" class="form-control" ng-model="model.thumbnails">
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>Items:</label>
+				    	<tags-input ng-model="model.items" placeholder="Add tags ..."></tags-input>
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="description">description:</label>
+				    	<input type="text" class="form-control" ng-model="model.description">
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>Active:</label>
+				    	<div>
+					  		<div toggle-switch 
+	                        	 class="switch-primary" 
+	                        	 ng-model="model.display" 
+	                        	 on-change="changeSwitch(display)"
+	                        	 knob-label="" on-label="on" off-label="off">
+		                    </div>
+		                </div>
+	                </div>
+				  	<button type="button" class="btn btn-default" 
+				  			ng-disabled="model.name == '' || model.id == '' "
+				  			ng-click="save()">Submit</button>
+				</form>
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "ACL": {
+    "dataSource": "db",
+    "public": false
+  },
+  "accessToken": {
+    "dataSource": "db",
+    "public": false
+  },
+  "roleMapping": {
+    "dataSource": "db",
+    "public": true
+  },
+  "role": {
+    "dataSource": "db",
+    "public": true
+  },
+  "user": {
+    "dataSource": "db",
+    "public": true
+  },
+  "category": {
+    "dataSource": "db",
+    "public": true
+  },
+  "categoryChild": {
+    "dataSource": "db",
+    "public": true
+  },
+  "banner": {
+    "dataSource": "db",
+    "public": true
+  },
+  "content": {
+    "dataSource": "db",
+    "public": true
+  },
+  "collection": {
+    "dataSource": "db",
+    "public": true
+  },
+  "audio": {
+    "dataSource": "db",
+    "public": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "file": {
+    "dataSource": "db",
+    "public": true
+  },
+  "report": {
+    "dataSource": "db",
+    "public": true
+  },
+  "log": {
+    "dataSource": "db",
+    "public": true
+  },
+  "keyword": {
+    "dataSource": "db",
+    "public": true
+  },
+  "temp": {
+    "dataSource": "db",
+    "public": true
+  }
+}

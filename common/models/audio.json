@@ -1,0 +1,40 @@
+{
+  "name": "audio",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "length": {
+      "type": "number"
+    },
+    "name": {
+      "type": "string"
+    },
+    "created": {
+      "type": "Date"
+    },
+    "size": {
+      "type": "number"
+    },
+    "alias": {
+      "type": "string",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "content": {
+      "type": "belongsTo",
+      "model": "content",
+      "foreignKey": "contenId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

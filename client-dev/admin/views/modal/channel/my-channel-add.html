@@ -1,0 +1,28 @@
+<div class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" ng-click="close(false)" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Add Music Channel</h4>
+			</div>
+
+			<div class="modal-body">           
+	            <div class="form-group">
+	            	{{resultText}}
+	                <img ng-src="{{param.thumbnails.high.url}}" width="100%" />
+	                <p>{{param.channelId}}</p>
+	                <p>{{param.channelTitle}}</p>
+	                <p>{{param.description}}</p>        
+	            </div>
+	        </div>
+
+	        <div class="modal-footer">	            
+	            <button class="btn btn-primary" type="button" ng-click="enroll()" ng-show="enroll_button">ENROLL</button>
+	            <button type="button" ng-click="close(false)" class="btn btn-warning" data-dismiss="modal">CLOSE</button>
+	        </div>
+
+		</div>
+	</div>
+</div>
+
+

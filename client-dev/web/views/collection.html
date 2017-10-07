@@ -1,0 +1,94 @@
+ <!-- Navigation -->
+    <!--  -->
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- <div collection-sidebar></div> -->
+
+            <div class="col-md-12">
+
+                <div class="row">
+                    
+                    <!-- <div infinite-scroll="loadMore()" 
+                         infinite-scroll-disabled="fetching || disabled"
+                         infinite-scroll-distance="500"> -->
+
+                    <div>     
+
+                        <div ng-repeat="content in contents">
+
+                            <!-- <div class="col-sm-4 col-lg-4 col-md-4" > -->
+                            <div class="col-sm-3 col-lg-3 col-md-3" >
+                                <div class="thumbnail">
+                                    <a target="_blank" href="https://www.youtube.com/channel/{{content.channelId}}">
+                                        <img ng-src="{{content.thumbnails.high.url}}" alt="{{content.description}}">
+                                    </a>
+                                    <div class="caption">
+                                        <h4 class="pull-right">{{content.videoCount}} / {{content.count}}</h4>
+                                        <h4><a href="#">{{content.channelTitle}}</a></h4>
+                                        <!-- <p>total view : {{content.viewCount}}</p> -->
+                                        <!-- <p>{{content.commentCount}}</p>
+                                        <p>{{content.subscriberCount}}</p> -->
+                                        <p>
+                                            <a target="_blank" href="https://www.youtube.com/channel/{{content.channelId}}">
+                                                {{content.description}}
+                                            </a>
+                                        </p>                                        
+                                    </div>            
+                                    <div class="caption" style="color:#f0ad4e; text-align:center; margin-bottom:-47px">                                   
+                                        <div style="float:left;">
+                                            <p style="margin:0; margin-top:10px;">subscribers</p>
+                                            <p style="margin:0;">comments</p>
+                                            <p style="margin:0;">views</p>
+                                        </div>
+                                        <div style="float:right;">                                                
+                                            <p style="margin:0; margin-top:10px;">{{content.subscriberCount | number}}</p>
+                                            <p style="margin:0;">{{content.commentCount | number}}</p>
+                                            <p style="margin:0;">{{content.viewCount | number}}</p>
+                                        </div>                                                
+                                    </div>
+                                    <!-- <div class="caption" style="margin-bottom:-78px;">                        
+                                        <div style="float:left;">
+                                            <button ng-if="!content.state" 
+                                                    class="btn btn-warning" 
+                                                    style="width:110%;"
+                                                    type="button"
+                                                    data-id="{{content.channelId}}" 
+                                                    ng-click="CollectById($index, $event)">
+                                                    Collect
+                                            </button>
+                                            <button ng-if="content.state" 
+                                                    class="btn btn-warning" 
+                                                    style="width:110%;"
+                                                    ng-click="updateCollection(content.id, content.channelId)"
+                                                    type="button">
+                                                    Collecting...
+                                            </button>        
+                                        </div>
+                                        <div style="float:right; padding-right:5px;">
+                                            <button class="btn btn-primary" 
+                                                    style="width:110%;"
+                                                    ng-click="deleteCollection(content.id, content.channelId)"
+                                                    type="button" >
+                                                    Delete 
+                                            </button>                                                   
+                                        </div>                                                
+                                    </div> -->                                    
+                                </div>
+                            </div>
+
+                        </div> <!-- end ng-repeat -->
+
+                    </div> <!-- end infinite-scroll -->     
+
+                </div> 
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->

@@ -1,0 +1,15 @@
+<div class="col-md-2">
+	<!-- <p class="lead">CHANNEL</p> -->
+	<div class="list-group" style="text-align: center;">    	
+		<a  class="list-group-item"
+			ui-sref="category/list"
+			ng-class="isActive('category/list') || isActive('category/view') || isActive('category/edit')">		    
+			카테고리 목록
+		</a>
+		<a  class="list-group-item"
+			ui-sref="category/create"			
+			ng-class="isActive('category/create')">
+			카테고리 추가
+		</a>
+	</div>
+</div>

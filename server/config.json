@@ -1,0 +1,31 @@
+{
+  "restApiRoot": "/api",
+  "db_host": "10.10.1.202",
+  "db_port": 27017,
+  "db_database": "music",
+  "db_username": "indeefun",
+  "db_password": "indeefun",
+  "db_name": "db",
+  "db_connector": "mongodb",
+  "host": "0.0.0.0",
+  "port": 8080,
+  "cookieSecret": "246bace2-38cb-4138-85d9-0ae8160b07c8",
+  "remoting": {
+    "context": false,
+    "rest": {
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false,
+    "handleErrors": false
+  },
+  "legacyExplorer": false
+}

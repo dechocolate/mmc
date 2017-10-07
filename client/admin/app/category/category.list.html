@@ -1,0 +1,72 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+	    <div class="jumbotron">
+
+	    	<div category-sidebar></div>    
+	        
+	        <div class="col-md-10">
+
+	        	<div class="form-group">			    	
+			    	<input type="text" class="form-control" placeholder="검색 ... " 
+			    	 	   ng-enter="search()" ng-model="keyword">
+			  	</div>
+
+	            <table st-table="rowCollection" class="table table-hover">
+	                <thead>
+	                <tr>
+	                	<th></th>
+	                	<th>ID</th>
+	                    <th>Name</th>
+	                    <th>Description</th>
+	                    <th>Edit</th>	 
+	                    <th>Active</th>
+	                    <th>Delete</th>	                    
+	                </tr>
+	                </thead>
+	                <tbody>
+	                <tr dir-paginate="content in contents | itemsPerPage: pageSize" 
+	                	total-items="totalCount" 	                	
+	                	current-page="pagination.current">
+	                	<td>{{(totalCount - (pageSize * (pagination.current-1))) - $index}}</td>
+	                	<td><a href="category/view/{{content.id}}">{{content.id}}</a></td>
+	                    <td><a href="category/view/{{content.id}}">{{content.name}}</a></td>
+	                    <td><a href="category/view/{{content.id}}">{{content.description}}</a></td>
+	                    <td><a href="category/edit/{{content.id}}">edit</td>
+	                    <td>
+		                    <div toggle-switch 
+		                    	 class="switch-primary" 
+		                    	 ng-model="content.display" 
+		                    	 on-change="display($index, content.channelId, !content.display)"
+		                    	 knob-label="" on-label="on" off-label="off">
+		                   	</div>
+                       	</td>
+	                    <td>
+	                        <button class="btn btn-danger"                                 
+	                                type="button"
+	                                ng-click="confirmDelete($index, content.id)">
+	                                delete
+	                        </button>
+	                    </td>
+	                </tr>
+	                </tbody>
+	            </table>
+
+	            <div style="text-align:center">
+	                <dir-pagination-controls boundary-links="true" 
+	                                         on-page-change="pageChanged(newPageNumber)" 
+	                                         template-url="components/pagination/dirPagination.tpl.html">                    
+	                </dir-pagination-controls>
+	            </div>          
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

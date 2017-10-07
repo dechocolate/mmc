@@ -1,0 +1,64 @@
+<div class="col-md-3">
+    <p class="lead">{{LoopBackAuth.currentUserEmail}}</p>
+
+
+    <div class="list-group" ng-if="myCollection.count == null">
+        <a href="#" class="list-group-item" ng-click="colletMyYoutube()">Enroll My Youtube</a>  
+    </div>
+
+
+    <div class="thumbnail" ng-if="myCollection.count != null">
+        <a target="_blank" href="https://www.youtube.com/channel/{{myCollection.channelId}}">
+            <img ng-src="{{myCollection.thumbnails.high.url}}" alt="{{myCollection.description}}">
+        </a>
+        <div class="caption">
+            <h4 class="pull-right">{{myCollection.videoCount}} / {{myCollection.count}}</h4>
+            <h4><a href="#">{{myCollection.channelTitle}}</a></h4>
+            <p>
+                <a target="_blank" href="https://www.youtube.com/channel/{{myCollection.channelId}}">
+                    {{myCollection.description}}
+                </a>
+            </p>                                        
+        </div>            
+        <div class="caption" style="color:#f0ad4e; text-align:center; margin-bottom:-47px">                                   
+            <div style="float:left;">
+                <p style="margin:0; margin-top:10px;">subscribers</p>
+                <p style="margin:0;">comments</p>
+                <p style="margin:0;">views</p>
+            </div>
+            <div style="float:right;">                                                
+                <p style="margin:0; margin-top:10px;">{{myCollection.subscriberCount | number}}</p>
+                <p style="margin:0;">{{myCollection.commentCount | number}}</p>
+                <p style="margin:0;">{{myCollection.viewCount | number}}</p>
+            </div>                                                
+        </div>
+        <div class="caption" style="margin-bottom:-78px;">                        
+            <div style="float:left;">
+                <button ng-if="!myCollection.state" 
+                        class="btn btn-warning" 
+                        style="width:110%;"
+                        type="button"
+                        data-id="{{myCollection.channelId}}" 
+                        ng-click="CollectById()">
+                        Collect
+                </button>
+                <button ng-if="myCollection.state" 
+                        class="btn btn-warning" 
+                        style="width:110%;"
+                        type="button" disabled>
+                        Collecting...
+                </button>        
+            </div>
+            <div style="float:right; padding-right:5px;">
+                <button class="btn btn-primary" 
+                        style="width:110%;"
+                        ng-click="deleteCollection(myCollection.id, myCollection.channelId)"
+                        type="button" >
+                        Delete 
+                </button>                                                   
+            </div>                                                
+        </div>                                    
+    </div>
+    
+                            
+</div>

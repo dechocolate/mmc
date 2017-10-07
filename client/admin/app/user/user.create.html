@@ -1,0 +1,40 @@
+<!-- header -->
+<div header></div>
+
+
+	<div class="jumbotron">
+
+	    <div class="jumbotron">
+
+	    	<div user-sidebar></div>    
+	        
+	        <div class="col-md-6">
+	            
+	        	<form>
+	        		<div class="form-group">
+				    	<label for="name"><span style="color:red;">*</span>Name:</label>
+				    	<input type="text" class="form-control" id="name" ng-model="model.username" required>
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="email"><span style="color:red;">*</span>Email address:</label>
+				    	<input type="email" class="form-control" id="email" ng-model="model.email" required>
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="pwd"><span style="color:red;">*</span>Password:</label>
+			    		<input type="password" class="form-control" id="pwd" ng-model="model.password" required>
+				  	</div>
+				  	<button type="submit" 
+				  			class="btn btn-default" 
+				  			ng-disabled="model.username == '' || model.email == '' || model.password == ''" 
+				  			ng-click="create()">Submit</button>
+				</form>
+
+
+	        </div>    
+		</div>
+
+	</div>
+
+
+<!-- footer -->
+<div footer></div>    

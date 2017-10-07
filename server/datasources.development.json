@@ -1,0 +1,38 @@
+{
+  "db": {
+    "host": "52.37.169.163",
+    "port": 27017,
+    "database": "music",
+    "username": "indeefun",
+    "password": "indeefun",
+    "name": "db",
+    "connector": "mongodb",
+    "allowExtendedOperators": true
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./server/storage"
+  },
+  "emailDs": {
+    "name": "emailDs",
+    "connector": "mail",
+    "transports": [
+      {
+        "type": "smtp",
+        "host": "smtp.gmail.com",
+        "secure": true,
+        "port": 465,
+        "tls": {
+          "rejectUnauthorized": false
+        },
+        "auth": {
+          "user": "kimjy4536@gmail.com",
+          "pass": "rlawnsdud1"
+        }
+      }
+    ]
+  }
+}
+

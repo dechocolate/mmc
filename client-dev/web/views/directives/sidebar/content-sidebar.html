@@ -1,0 +1,16 @@
+<div class="col-md-3">
+    <p class="lead">CHANNEL</p>
+    <div class="list-group" style="text-align: center;">    	
+        <a class="list-group-item"
+           ng-class="{'active': 'all' == states.activeItem}"  
+    	   ng-click="selectChannel('all'); states.activeItem = 'all';">
+           ALL
+        </a>
+        <a ng-repeat="category in categories" 
+           class="list-group-item" 
+           ng-class="{'active': category.channelId == states.activeItem}"  
+           ng-click="selectChannel(category.channelId); states.activeItem = category.channelId;">
+           {{category.channelTitle}}
+        </a>        
+    </div>
+</div>

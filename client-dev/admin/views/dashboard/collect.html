@@ -1,0 +1,85 @@
+<div>
+	<a ng-click="open()"class="pull-right btn btn-primary btn-outline btn-rounded">ADD CHANNEL</a>
+	<h2>Collections <small>music channel</small></h2>
+
+    <div class="jumbotron">
+        <div class="container">
+            
+
+            <table st-table="rowCollection" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>COUNT</th>
+                    <th>SUBSCRIBERS</th>
+                    <th>COMMENTS</th>
+                    <th>VIEWS</th> 
+                    <th>Display</th>                   
+                    <th>COLLECT</th>
+                    <th>DELETE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr dir-paginate="content in contents | itemsPerPage: pageSize" total-items="totalCount" current-page="pagination.current">
+                    <td>{{content.channelTitle}}</td>
+                    <td>{{content.videoCount}} / {{content.count}}</td>
+                    <td>{{content.subscriberCount | number}}</td>
+                    <td>{{content.commentCount | number}}</td>
+                    <td>{{content.viewCount | number}}</td>
+                    <td>
+                        <button ng-if="content.display" 
+                                class="btn btn-primary"                                 
+                                type="button"                                
+                                ng-click="display($index, content.channelId, false)">
+                                true
+                        </button>
+                        <button ng-if="!content.display" 
+                                class="btn btn-primary"                                 
+                                type="button"
+                                ng-click="display($index, content.channelId, true)">
+                                false
+                        </button>                                                                                   
+                    </td>
+                    <td>
+                        <button ng-if="!content.state" 
+                                class="btn btn-warning"                                 
+                                type="button"
+                                data-id="{{content.channelId}}" 
+                                ng-click="CollectById($index, $event)">
+                                Collect
+                        </button>
+                        <button ng-if="content.state" 
+                                class="btn btn-warning"                                 
+                                ng-click="updateCollection($index, content.id, content.channelId)"
+                                type="button">
+                                Collecting...
+                        </button>        
+                    </td>
+                    <td>                        
+                        <button type="button" 
+                                ng-click="deleteCollection(content.id, content.channelId)"
+                                class="btn btn-sm btn-danger">
+                            <i class="glyphicon glyphicon-remove-circle"></i>
+                        </button>                                              
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+            
+            <!-- <table>
+                <tr dir-paginate="content in contents | itemsPerPage: pageSize" total-items="totalCount" current-page="pagination.current">
+                    <td>{{ content.channelId }}</td>                
+                </tr>
+            </table> -->
+
+            <div style="text-align:center">
+                <dir-pagination-controls boundary-links="true" 
+                                         on-page-change="pageChanged(newPageNumber)" 
+                                         template-url="views/common/dirPagination.tpl.html">                    
+                </dir-pagination-controls>
+            </div>          
+
+        </div>
+    </div>
