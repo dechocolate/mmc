@@ -527,7 +527,7 @@ function downloadCustomFile(contentId, videoId, data, dir){
 
     var stream = request
         // .get(data.link)
-        .get(data.url)
+        .get('http:'+data.url)
         .on('error', function(err) {
             util.logger('error').error("getMp3 ::", JSON.stringify(err, null, 2));
 
