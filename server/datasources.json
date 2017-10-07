@@ -1,0 +1,18 @@
+{
+  "db": {
+    "host": "${db_host}",
+    "port": "${db_port}",
+    "database": "${db_database}",
+    "username": "${db_username}",
+    "password": "${db_password}",
+    "name": "db",
+    "connector": "${db_connector}",
+    "allowExtendedOperators": true
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "/mnt/storage/music"
+  }
+}
