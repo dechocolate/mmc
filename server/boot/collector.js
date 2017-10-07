@@ -497,7 +497,7 @@ function getCustomYoutube(contentId, videoId) {
 
         request(options, function(error, response, body){
 
-            // console.log('getYoutubeMp3Script :: ', body);
+            console.log('getYoutubeMp3Script :: ', body);
             util.logger('debug').debug('getYoutubeMp3Script :: ', body);
 
             //if(!error && response.statusCode == 200 && null != body)
