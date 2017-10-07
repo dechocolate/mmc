@@ -109,36 +109,36 @@ module.exports = function(app) {
 	});
 
 
-	// app.post('/executeCustom', function(req, res) {
-		
-	// 	collector.executeCustom(req.body.videoId);
-	// 	res.send();
-		
-	// });
-
 	app.post('/executeCustom', function(req, res) {
-		
-		var channelId = req.body.channelId;		
-		var options = {
-            uri: 'http://localhost:8888/executeById',
-            form: {videoId:req.body.videoId},
-            method: 'POST',
-            timeout: 3000           
-        }
-
-        request(options, function(error, response, body){                        
-            if(error){
-            	util.logger('error').error('executeById :: error', channelId, error);                 
-            	// console.log("executeById :: error", channelId, error);
-            }else{
-            	util.logger('debug').debug('executeById :: response', channelId, response);                 
-            	// console.log("executeById :: response", channelId, response);
-            }            
-
-        });    
-
+		console.log(req.body);
+		collector.executeCustom(req.body.videoId);
 		res.send();
 	});
+
+
+	// app.post('/executeCustom', function(req, res) {
+		
+	// 	var channelId = req.body.channelId;		
+	// 	var options = {
+    //         uri: 'http://localhost:8888/executeById',
+    //         form: {videoId:req.body.videoId},
+    //         method: 'POST',
+    //         timeout: 3000           
+    //     }
+
+    //     request(options, function(error, response, body){                        
+    //         if(error){
+    //         	util.logger('error').error('executeById :: error', channelId, error);                 
+    //         	// console.log("executeById :: error", channelId, error);
+    //         }else{
+    //         	util.logger('debug').debug('executeById :: response', channelId, response);                 
+    //         	// console.log("executeById :: response", channelId, response);
+    //         }            
+
+    //     });    
+
+	// 	res.send();
+	// });
 
 	// app.post('/executeById', function(req, res) {
 		
