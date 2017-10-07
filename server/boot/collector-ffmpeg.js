@@ -3,7 +3,8 @@ var util = require('./util');
 var fs = require('fs');
 var path = require('path');
 var YouTube = require('youtube-node');
-var youtubedl = require('youtube-dl');
+// var youtubedl = require('youtube-dl');
+var youtubedl = null;
 var request = require('request');
 var Promise = require('bluebird');
 
