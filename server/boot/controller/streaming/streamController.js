@@ -306,7 +306,7 @@ module.exports = function(app) {
 			// 	writeStream.end();
 			// });
 
-		});
+		// });
 	});
 
 
