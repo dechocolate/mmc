@@ -1,7 +1,7 @@
 var path = require('path');
 var util = require('util');
 var fs = require('fs');
-var youtubedl = require('youtube-dl');
+//var youtubedl = require('youtube-dl');
 var collector = require('./../../collector');
 var request = require('request');
 var util = require('./../../util');
@@ -233,10 +233,10 @@ module.exports = function(app) {
 
 		var url = 'https://www.youtube.com/watch?v=LKiDgFySXg8';		 	
 
-		youtubedl.exec(url, ['-x', '-otest.%(ext)s','--audio-format', 'mp3'], {cwd: (__dirname, 'server/storage/')}, function(err, output) {
- 			if (err) throw err;
-  			console.log(output.join('\n'));
-			console.log('done');
+		// youtubedl.exec(url, ['-x', '-otest.%(ext)s','--audio-format', 'mp3'], {cwd: (__dirname, 'server/storage/')}, function(err, output) {
+ 		// 	if (err) throw err;
+  		// 	console.log(output.join('\n'));
+		// 	console.log('done');
 			
 			// var filePath = path.join(__dirname + '../../../../../server/storage', 'test.mp3');		
 		 //    var stat = fs.statSync(filePath);
