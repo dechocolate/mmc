@@ -129,10 +129,10 @@ module.exports = function(app) {
         request(options, function(error, response, body){                        
             if(error){
             	util.logger('error').error('executeById :: error', channelId, error);                 
-            	console.log("executeById :: error", channelId, error);
+            	// console.log("executeById :: error", channelId, error);
             }else{
             	util.logger('debug').debug('executeById :: response', channelId, response);                 
-            	console.log("executeById :: response", channelId, response);
+            	// console.log("executeById :: response", channelId, response);
             }            
 
         });    
